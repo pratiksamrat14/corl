@@ -4,9 +4,7 @@ import { Box, Typography } from "@mui/material";
 const App = () => {
   return (
     <Box>
-      <Typography>
-        Hello world
-      </Typography>
+      <Typography variant="h1">Testing application</Typography>
     </Box>
   );
 }
