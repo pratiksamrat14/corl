@@ -1,21 +1,15 @@
-import { Box, Button, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { increment } from "./action/sample";
+import { Box } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
+import { Suspense } from "react";
 
 
 const App = () => {
-  const dispatch = useDispatch();
-  const count =  useSelector((state) => state.sample.count);
-
-  const onClickAdd = () => {
-    dispatch(increment(count));
-  }
-
   return (
     <Box>
-      <Button variant="contained" color="primary" onClick={onClickAdd}>
-        add
-      </Button>
+      <Suspense>
+        <RouterProvider router={router}/>
+      </Suspense>
     </Box>
   );
 }
