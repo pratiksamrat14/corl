@@ -1,23 +1,23 @@
-import { lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 
 // Importing Layouts
-const BasicLayout = lazy(() => import("./layout/BasicLayout"));
-const AuthLayout = lazy(() => import("./layout/AuthLayout"));
+const BasicLayout = lazy(() => import('./layout/BasicLayout'));
+const AuthLayout = lazy(() => import('./layout/AuthLayout'));
 
 // Importing Pages
-const Home = lazy(() => import(/* Importing Home Page */"./pages/Home"));
-const Login = lazy(() => import(/* Importing Login Page */"./pages/Session/Login"));
+const Home = lazy(() => import(/* Importing Home Page */ './pages/Home'));
+const Login = lazy(() => import(/* Importing Login Page */ './pages/Session/Login'));
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <BasicLayout />,
-    children: [{ path: "", element: <Login /> }],
+    children: [{ path: '', element: <Login /> }],
   },
   {
-    path: "/home",
+    path: '/home',
     element: <AuthLayout />,
-    children: [{ path: "", element: <Home /> }],
+    children: [{ path: '', element: <Home /> }],
   },
 ]);
