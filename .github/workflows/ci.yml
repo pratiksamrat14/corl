@@ -2,23 +2,24 @@ name: CI
 
 on:
   push:
-    branches: -main
-  pull_request:
-    branches: -main
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      -uses: actions/checkout@v4
-      -name: hello world
-       run: echo "Hello World"
-       shell: bash
-    
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-       -name: goodbye world
-        run: echo "Good Bye"
-        shell: bash
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build:prod
