@@ -22,6 +22,3 @@ jobs:
 
       - name: Build
         run: npm run build:prod
-
-      - name: Build
-        run: npm run deploy
