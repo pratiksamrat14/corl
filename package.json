@@ -2,7 +2,6 @@
   "name": "corl.tech",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pratiksamrat14.github.io/react-setup/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -24,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start": "react-scripts start",
     "start:qa": "env-cmd -f .env.qa react-scripts start",
     "start:prod": "env-cmd -f .env.production react-scripts start",
     "build:dev": "env-cmd -f .env.development react-scripts build",
@@ -32,6 +31,7 @@
     "build:prod": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "gh-pages -d build",
     "deploy": "gh-pages -d build",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
